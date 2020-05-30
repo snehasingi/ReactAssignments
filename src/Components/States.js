@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 
 class States extends Component{
     //React 16 and does not require constructor to declare state. You can directly declare it.
