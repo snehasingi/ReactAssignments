@@ -4,7 +4,6 @@ class StaticClock extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <h2>Using JavaScript Functions</h2>
                 <h3> Static Clock : {this.props.date.toLocaleTimeString()}</h3>
             </React.Fragment>
         )

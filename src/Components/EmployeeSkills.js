@@ -18,7 +18,7 @@ class EmployeeSkills extends Component{
     
     render(){
         return(
-            <React.Fragment><h2>Employee Details</h2>
+            <React.Fragment>
               <table border="1">
                   <THeader/>
                   <TSkills employeeDetails = {employee}  />

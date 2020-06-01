@@ -19,7 +19,7 @@ class States extends Component{
     render()
     {
         return(
-            <React.Fragment> <h2> Class Component State Management Using Constructor</h2>
+            <React.Fragment>
                 <h3>Count : {this.state.count} </h3>
                 <button onClick = {this.Increment}>Increment</button> 
                 <button onClick = {this.Decrement}>Decrement</button>   
@@ -43,7 +43,7 @@ class States extends Component{
 function CounterFunctionalComponent() {
   const [count, setCount] = React.useState(0);
   return (
-    <React.Fragment><h2> Function Component State Mananement Using Hooks</h2> 
+    <React.Fragment> 
     <h3>Count : {count}</h3>
       <button onClick={() => setCount(count + 1)}>
         Increment
