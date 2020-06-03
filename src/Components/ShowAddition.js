@@ -2,39 +2,39 @@ import React,  { useState } from 'react';
 
 class ShowAddition extends React.Component{
     state = {
-        text1Value : "",
-        text2Value : "",
+        text1Value : "50",
+        text2Value : "30",
         result : ""
     }
     getValue = (event) =>{
         if(event.target.name === "text1"){
-            this.setState({text1Value : event.target.value.trim()})
+            this.setState({text1Value : event.target.value})
         }else if(event.target.name === "text2"){
-          this.setState({text2Value : event.target.value.trim()})
-      }
+          this.setState({text2Value : event.target.value})
+        }
+      //update state asynchronosly
+      this.setState(state=>({result : parseFloat(state.text1Value) + parseFloat(state.text2Value)}))
     }
 
-    showAddition = () =>{
-      var text1 = this.state.text1Value;
-      var text2  = this.state.text2Value;   
-      console.log(typeof text1);  
-     //if(typeof text1 ==='undefined' || typeof text2 === 'undefined')
-          this.setState({ result : text1 + text2});
-          //this.setState({ result : parseInt(text1) + parseInt(text2)});
-      return this.state.result;
+    showAddition = () =>{ 
+      this.setState({ result : parseFloat(this.state.text1Value) + parseFloat(this.state.text2Value)});
+    }
+
+    componentDidMount= () =>{
+        this.showAddition();
     }
     render(){
         return(
             <React.Fragment>
                 <input
-                     type={Text} 
-                     value={this.state.tex1tValue} 
+                     type="text"
+                     value={this.state.text1Value} 
                      name="text1"
                      onChange={this.getValue}>
                 </input>
                 +
                 <input
-                     type={Text} 
+                     type="text" 
                      value={this.state.text2Value} 
                      name="text2"
                      onChange={this.getValue}>
@@ -42,7 +42,7 @@ class ShowAddition extends React.Component{
                 
                 <button onClick={this.showAddition}> Add </button>
           
-                <h3>{this.state.result}</h3>
+                <h3>Addition : {this.state.result}</h3>
             </React.Fragment>
         )
     }

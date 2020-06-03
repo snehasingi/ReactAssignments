@@ -11,29 +11,19 @@ class Assignment1 extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <h1 align="center"> Assignments</h1>
+                <h1 align="center"> Assignment - 1</h1>
                 <table align="center">
+                    <tbody>
                     <tr>
-                        <td><h3>1. Employee Details </h3></td><td align="right"><EmployeeSkills/></td>
-                    </tr>
+                        <td><h3>1. Extend the Dynamic Clock example using a start and stop button which helps us control the clock </h3></td><td align="right"><DynamicClock date={new Date()}/></td>
+                    </tr><br></br>
                     <tr>
-                        <td><h3>2. Class Component State Management Using Constructor</h3></td><td align="right"> <States/></td>
-                    </tr>
+                        <td><h3>2.  Create 2 text boxes and set initial values. As soon as there is a change in the text values , calculate the sum of the values</h3></td><td align="right"><ShowAddition/></td>
+                    </tr><br></br><br></br>
                     <tr>
-                        <td><h3>3. Function Component State Mananement Using Hooks</h3></td><td align="right"><CounterFunctionalComponent/></td>
+                        <td><h3>3. Add a new Skill and Employee in the project to include new skills and Employees dynamically through form elements </h3></td><td align="right"><EmployeeSkills/></td>
                     </tr>
-                    <tr>
-                        <td><h3>4. Using JavaScript Functions</h3></td><td align="right"><StaticClock date={new Date()}/></td>
-                    </tr>
-                    <tr>
-                        <td><h3>5. Using JavaScript Functions</h3></td><td align="right"><DynamicClock date={new Date()}/></td>
-                    </tr>
-                    <tr>
-                        <td><h3>6. Timer</h3></td><td align="right"><Timer/></td>
-                    </tr>
-                    <tr>
-                        <td><h3>7. Addition / Concatenation</h3></td><td align="right"><ShowAddition/></td>
-                    </tr>
+                    </tbody>
                     </table>
             </React.Fragment>
         )

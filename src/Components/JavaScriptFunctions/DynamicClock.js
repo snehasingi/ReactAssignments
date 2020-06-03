@@ -4,11 +4,15 @@ class DynamicClock extends React.Component {
       super(props);
       this.state = {date: new Date()};
     }
-    componentDidMount() {
-      this.timerID = setInterval(() => this.tick(),1000);
+    startClock = () =>{
+      this.date = setInterval(() => this.tick(),1000);
+    }
+
+    stopClock = () =>{
+      clearInterval(this.date);
     }
     componentWillUnmount() {
-      clearInterval(this.timerID);
+      clearInterval(this.date);
     }
     tick() {
       this.setState({
@@ -19,6 +23,8 @@ class DynamicClock extends React.Component {
         return (
           <div>
             <h3> Dynamic Clock : {this.state.date.toLocaleTimeString()}</h3>
+            <button name="start" onClick={this.startClock}> Start </button>
+            <button name="stop" onClick={this.stopClock}> Stop </button>
           </div>
         );
       }
